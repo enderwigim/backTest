@@ -9,6 +9,12 @@
 
 <body>
   <!-- Write your code here -->
+   <% if (countName !== null) { %>
+    <h1>The ammount of letters in your name is <%= countName %></h1>
+    <% } else { %>
+    <h1>Write your name: </h1>
+    <% } %>
+
   <form action="/submit" method="POST">
     <input type="text" name="fName" placeholder="First name">
     <input type="text" name="lName" placeholder="Last name">
