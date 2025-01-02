@@ -1,0 +1,70 @@
+
+nav {
+    /* Creating a sticky nav */
+    position:sticky;
+    top: 0;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    background-color: var(--nav-foot-color);
+    border-radius: 10px 10px 0px 0px;
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-left: auto;
+        margin-right: 2%;
+        gap: 1em;
+    }
+    button {
+        color: var(--font-color);
+        width: 13em;
+        border-radius: 5px;
+        font-weight: 600;
+        height: 3em;
+    }
+.logo {
+    width: 100px;
+    height: 100px;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-right: 7%;
+    color: var(--font-color);
+    font-weight: 700;
+}
+li {
+    padding: 15px;
+}
+li:hover {
+    transition: 100ms;
+    transform: scale(1.3);
+    font-weight: 900;
+    background-color: var(--first-color);
+    color: #4d6066;
+    border-radius: 5px;
+    
+}
+&.register-button {
+    padding: 20px;
+}
+.register-button {
+    background-color: var(--first-color);
+    border-color: var(--first-color);
+}
+.login-button {
+    background-color: #fe978e00;
+    border-color: var(--first-color);
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+}
+  

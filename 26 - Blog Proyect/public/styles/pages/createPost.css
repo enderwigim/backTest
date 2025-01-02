@@ -1,0 +1,81 @@
+@import url(../root.css);
+@import url(../components/header.css);
+@import url(../components/nav.css);
+@import url(../components/footer.css);
+
+/* ELEMENTS */
+h2 {
+    font-weight: bold;
+    font-size: xx-large;
+    color: #CDEAFF;  
+    text-shadow: 2px 2px 2px #000005;
+
+}
+input{
+    width: 100%; 
+    max-width: 45em; 
+    border-radius: 5px 5px 5px 5px;
+    border: 0px;
+    padding: 1%;
+    font-size: larger;
+    outline-color: var(--first-color);
+}
+main{
+    background-image: var(--background-main-img);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background: var(--background-main-img) center/cover fixed; */
+}
+textarea {
+    width: 100%;
+    max-width: 45em;
+    height: 60%;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid;
+    padding: 1%;
+    font-size: 1.5em;
+    border-color: var(--second-color);
+    outline-color: var(--first-color);
+}
+
+/* CLASSES */
+.buttons {
+    justify-self: center;
+    display: flex;
+    gap: 0px;
+    button{
+        width: 20em;
+        border-radius: 5px;
+        font-weight: 600;
+        height: 3em;
+        color: var(--font-color);
+    }
+    .btn-send{
+        justify-self: center;
+        background-color: var(--first-color);
+        border-color: var(--first-color);
+        border-radius: 5px 0px 0px 5px
+    };
+    .btn-cancel{
+        background-color: var(--nav-foot-color);
+        border-radius: 0px 5px 5px 0px;
+        border-color: var(--nav-foot-color);
+    }
+}
+
+.center-block {
+    text-align: center;
+    padding: 2em;
+}
+form {
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    row-gap: 10px;
+}
+
+

@@ -1,0 +1,17 @@
+:root{
+    --first-color : #FE978E;
+    --second-color: #4d6066;
+    --danger-color: #b11030;
+    --danger-darker: #910824;
+    --nav-foot-color : #324C65;
+    --font-color: #fff9f9;
+    --text-shadow: #000005;
+    --text-container-bg : #fff9f976;
+    --text-shadow-first-color: 0.06em 0.06em 0.06em #000005;
+    
+    /* IMAGES */
+    --background-main-img : url("/assets/background.jpg");
+    --homeGrid-1 : url("/assets/fondos/1.jpg");
+    --homeGrid-2 : url("/assets/fondos/2.jpg");
+    --homeGrid-3 : url("/assets/fondos/3.jpg");
+}

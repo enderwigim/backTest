@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveBridge</title>
+    <link rel="stylesheet" type="text/css" href="/styles/pages/newsletter.css">
+</head>
+<body>
+    <%- include("components/header/header.html") %>
+    <%- include("components/nav/nav.html") %>
+    <main>
+        <% posts.forEach((post) => { %>
+        <section class="newsContainer">
+            <h1 class="title"><%= post.title %> <%= post.id %></h1>
+            <h2 class="subtitle"><%= post.subtitle %></h2>
+            <p class="content"><%= post.content %></p>
+            <section class="buttons">
+                <button class="btn-delete">Eliminar</button>
+                <button id="btnEdit" class="btn-edit">Editar</button>
+            </section>
+        </section>
+        <% }) %>
+        
+    </main>
+    
+    <%- include("components/footer/footer.html") %>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p>¿Estas seguro que quieres eliminar este post?</p>
+            <button id="confirmDelete" class="btn-confirm">Confirmar</button>
+            <button id="cancelDelete" class="btn-cancel">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="/js/deletePost.js"></script>
+    <script src="/js/newsletter.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveBridge</title>
+    <link rel="stylesheet" type="text/css" href="/styles/pages/createPost.css">
+</head>
+<body>
+    <%- include("components/header/header.html") %>
+    <%- include("components/nav/nav.html") %>
+    <main class="center-block">
+        <h2 class="r1">Editar Post</h2>
+        <form action="/editPost/<%= post.id %>" method="POST">
+            <article class="r2">
+                <input name="fTitle" value="<%= post.title %>" placeholder="Titulo">
+            </article>
+            <article class="r3">
+                <input name="fSubtitle" value="<%= post.subtitle %>" placeholder="Subtitulo">
+            </article>
+            <article class="r4">
+                <textarea name="fContent" placeholder="Contenido"><%= post.content %></textarea>
+            </article>
+            <article class="buttons">
+                <button type="submit" class="btn-send">Enviar</button>
+                <button class="btn-cancel">Cancelar</button>
+            </article>
+        </form>
+    </main>
+
+
+    <%- include("components/footer/footer.html") %>
+
+
+</body>
+</html>
