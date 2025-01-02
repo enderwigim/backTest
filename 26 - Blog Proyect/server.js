@@ -42,8 +42,12 @@ app.get("/editPost/:id", (req, res) => {
 
 // POST EDIT POST
 app.post("/editPost/:id", (req, res) => {
-    console.log(req.params.id);
-    console.log(req.body)
+    let title = req.body["fTitle"];
+    let subtitle = req.body["fSubtitle"];
+    let content = req.body["fContent"];
+    let id = req.params.id;
+    posts.editPost(id, title, subtitle, content);
+    res.redirect("/");
 })
 
 // GET /homeGrid ROUTE
@@ -64,4 +68,10 @@ app.post("/submitPost", (req, res) => {
     posts.addPost(title, subtitle, content);
     res.redirect("/");
 })
+
+// DELETE POST
+app.delete("/deletePost/:id", (req, res) => {
+    posts.deletePost(req.params.id);
+    res.redirect("/");
+});
 

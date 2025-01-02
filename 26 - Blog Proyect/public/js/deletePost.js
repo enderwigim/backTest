@@ -1,7 +1,9 @@
+// DISPLAY CONFIRMATION
 document.addEventListener("DOMContentLoaded", () => {
     const deleteButtons = document.querySelectorAll(".btn-delete");
     const modal = document.getElementById("confirmModal");
     const cancelDelete = document.getElementById("cancelDelete");
+    let postId = null;
 
     // Show the modal when any delete button is clicked
     deleteButtons.forEach((button) => {
@@ -21,4 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.style.display = "none";
         }
     });
+
+    modal.addEventListener("click", () => {
+        postId = deleteButtons[0].getAttribute("postId");
+        fetch(`/deletePost/${postId}`, {
+            method: "DELETE"
+        })
+        .then(response => {
+            if (response.redirected) {
+                window.location.href = response.url; // Redirect to the new location
+            } else {
+                return response.json(); // Handle other responses
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    })
 });
+
+

@@ -9,13 +9,23 @@ function addPost(title, subtitle, content){
     posts.push(post);
 }
 function deletePost(id){
-    posts = posts.filter((post) => post.id !== id);
+    posts = posts.filter((post) => post.id != id);
 }
 function getPostById(id){
     let findedPost = posts.filter((post) => {
         return post.id == id
     })
     return findedPost[0];
+}
+function editPost(id, title, subtitle, content){
+    // CREATE NEW POST
+    let newPost = new createPost(title, subtitle, content);
+
+    // EDIT POST
+    let post = getPostById(id);
+    post.title = newPost.title;
+    post.subtitle = newPost.subtitle;
+    post.content = newPost.content;
 }
 
 function createPost(title, subtitle, content){
@@ -25,8 +35,10 @@ function createPost(title, subtitle, content){
 }
 
 export {
+    createPost,
     posts,
     addPost,
     deletePost,
-    getPostById
+    getPostById,
+    editPost
 }
